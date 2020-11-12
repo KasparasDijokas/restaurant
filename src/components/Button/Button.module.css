@@ -1,0 +1,29 @@
+.btn_dark {
+    padding: 14px 40px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 80px;
+    transition: all .2s ease-in-out;
+}
+
+.btn_light {
+    padding: 14px 40px;
+    background: black;
+    border: 1px solid black;
+    color: #fff;
+    margin-bottom: 80px;
+    transition: all .2s ease-in-out;
+    font-size: 1.8rem;
+}
+
+.btn_dark:hover {
+    background: #fff;
+    color: black;
+}
+
+.btn_light:hover {
+    background: #fff;
+    color: black;
+}
