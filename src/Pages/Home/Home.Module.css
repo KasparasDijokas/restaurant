@@ -1,0 +1,330 @@
+/* HEADER  */
+
+.header_img_container {
+  background: url("../../assets/images/homepage/hero-bg-mobile@2x.jpg")
+    no-repeat top center;
+  background-size: cover;
+  height: 40vh;
+}
+
+.header_text_container {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header_text_container h1 {
+  line-height: normal;
+  padding: 0 20px;
+}
+
+.header_text_container h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+.header_text_container p {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.header_container button {
+  margin-bottom: 140px;
+}
+
+/* INTRO COONTAINER */
+
+.intro_one {
+  text-align: center;
+  position: relative;
+  top: -80px;
+  z-index: 1;
+  width: 80%;
+  margin: auto;
+}
+
+.intro_two {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.intro_one_image,
+.intro_two_image {
+  margin-bottom: 20px;
+}
+
+/* SECONDARY CONTAINER */
+
+.secondary_container {
+  background-color: black;
+}
+
+.secondary_info {
+  color: #fff;
+  text-align: center;
+  padding: 60px 0 0;
+}
+
+.secondary_info h2 {
+  padding: 0 60px;
+  margin-top: 40px;
+}
+
+.secondary_info button {
+  margin-top: 20px;
+}
+
+.secondary_dishes div:last-of-type {
+  border: none;
+}
+
+/* OFFERS CONTAINER  */
+
+.offers_container {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.offers_container img {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.offers_button {
+  color: var(--secondary-clay);
+  position: relative;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 8px;
+  transition: all 0.3s ease-out;
+}
+
+.offers_button:after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary-beaver);
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.offers_button.disabled:after {
+  content: "";
+  width: 0;
+  height: 0;
+}
+
+.offers_button.disabled:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.offers_button:focus {
+  outline: none;
+}
+
+.offers_button.disabled {
+  opacity: 0.5;
+}
+
+/* offer info containers */
+
+.food_group_container {
+  display: none;
+  margin-top: 40px;
+}
+
+.food_group_container p {
+  color: var(--secondary-clay);
+  margin-bottom: 30px;
+}
+
+.food_group_container.show {
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .header_container {
+    display: flex;
+    height: 550px;
+  }
+  .header_text_container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 100px;
+  }
+
+  .header_text_container h1 {
+    white-space: nowrap;
+    z-index: 1;
+    margin-right: -200px;
+  }
+  .header_text_container p {
+    margin-right: -200px;
+    z-index: 1;
+  }
+
+  .header_img_container {
+    width: 70%;
+    height: 100%;
+    background: url("../../assets/images/homepage/hero-bg-desktop.jpg") no-repeat center;
+    background-size: cover;
+    order: 1;
+  }
+
+  /* INTRO CONTAINERS  */
+
+.intro_one_image,
+.intro_two_image {
+  margin-bottom: 0;
+}
+
+  .intro_container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .intro_one_image img, .intro_two_image img {
+    width: 100%;
+  }
+
+  .intro_one, .intro_two {
+    display: flex;
+  }
+  
+  .intro_one {
+    top: 0;
+  }
+  .intro_one_image {
+    position: relative;
+    top: -20px;
+    width: 50%;
+  }
+  .intro_two_image {
+    width: 50%;
+    position: relative;
+    bottom: -20px;
+  }
+
+  .intro_one_text, .intro_two_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+  }
+
+  .intro_one_text {
+    align-items: flex-start;
+    margin-left: 80px;
+  }
+
+  .intro_two_text {
+    order: -1;
+    align-items: flex-start;
+    margin-right: 80px;
+  }
+  .intro_one_text p, .intro_one_text h2 {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+  }
+  .intro_two_text p, .intro_two_text h2 {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+  }
+
+  /* SECONDARY CONTAINER  */
+
+  .secondary_container {
+    display: flex;
+    padding: 100px 0;
+  }
+
+  .secondary_info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 80px;
+  }
+
+  .secondary_info h2, .secondary_info p {
+    padding: 0;
+    width: 80%;
+  }
+
+  .secondary_dishes {
+    width: 60%;
+    margin-top: 50px;
+  }
+
+  .secondary_dishes div:last-of-type {
+    border: none;
+  }
+
+  /* OFFERS CONTAINER   */
+
+  .offers_container {
+    display: flex;
+    width: 80%;
+
+    margin: auto;
+  }
+
+  .offers_container img {
+    max-width: 440px;
+    max-height: 500px;
+  }
+
+  .offers_container_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 80px;
+  }
+
+  .offers_container_controls {
+    order: 1;
+  }
+
+  .offers_container_controls button {
+    margin: 0;
+    text-align: left;
+  }
+
+  .offers_container_controls button:after {
+    content: "";
+    left: -40px;
+    top: 17px;
+    height: 1px;
+  }
+
+  .offers_container_info h2,  .offers_container_info p{
+    padding: 0;
+    width: 80%;
+  }
+}

@@ -1,0 +1,121 @@
+/* SECONDARY CONTAINER */
+
+.menu_container {
+    background-color: black;
+    display: flex;
+  }
+
+  .menu_items {
+    width: 80%;
+    color: #fff;
+  }
+
+  .menu_cart {
+      width: 20%;
+      background-color: #fff;
+  }
+
+  .menu_dishes {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+  }
+
+  .menu_dishes button {
+    margin-left: 40px;
+    margin-bottom: 0;
+}
+
+.dish_item {
+    display: flex;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid gray;
+    padding: 40px 0;
+}
+
+.dish_item h2 {
+    margin-top: 0;
+  }
+
+
+  .menu_dishes h2, .menu_dishes p {
+    text-align: left;
+    padding: 0;
+    margin-left: 40px;
+ }
+ .menu_dishes img {
+     width: 256px;
+     height: 192px;
+ }
+
+ .price {
+     display: flex;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  
+  .secondary_info {
+    color: #fff;
+    text-align: center;
+    padding: 60px 0 0;
+  }
+  
+  .secondary_info h2 {
+    padding: 0 60px;
+    margin-top: 40px;
+  }
+  
+  .secondary_info button {
+    margin-top: 20px;
+  }
+  
+  .secondary_dishes div:last-of-type {
+    border: none;
+  }
+
+
+  /* SECONDARY CONTAINER  */
+
+  /* @media screen and (min-width: 992px) {
+
+    
+      .secondary_info {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        align-items: flex-start;
+        margin-left: 80px;
+      }
+    
+      .secondary_info h2, .secondary_info p {
+        padding: 0;
+        width: 80%;
+      }
+    
+      .secondary_dishes {
+        width: 60%;
+        margin-top: 50px;
+      }
+    
+      .secondary_dishes div:last-of-type {
+        border: none;
+      } */
+
+   /* }  */
+   
+
+

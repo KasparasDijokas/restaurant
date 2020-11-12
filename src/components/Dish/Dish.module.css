@@ -1,0 +1,40 @@
+.dish_container {
+    width: 80%;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px solid gray;
+    padding: 20px 0;
+}
+
+.dish_container h3 {
+    margin-top: 30px;
+}
+
+.dish_container img {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 992px) {
+    .dish_container {
+        display: flex;
+        padding: 0;
+        width: 80%;
+        margin-right: 140px;
+    }
+
+    .dish_container h3, .dish_container p {
+       text-align: left;
+       padding: 0;
+       margin-left: 40px;
+    }
+    .dish_container img {
+        width: 128px;
+        height: 96px;
+    }
+}
+
+
+.dish_menu {
+    color: black;
+}
