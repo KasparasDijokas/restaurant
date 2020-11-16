@@ -1,0 +1,31 @@
+.filter {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #32383D;
+    color: #fff;
+}
+
+.category, .price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter h3 {
+    margin: 0;
+}
+
+.filter select {
+    background-color: #21272C;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.8rem;
+    margin-left: 10px;
+    color: #fff;
+    border-radius: 8px;
+    outline: none;
+    appearance: none;
+    text-align: center;
+    text-align-last: center;
+}

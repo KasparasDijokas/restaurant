@@ -1,8 +1,8 @@
 /* SECONDARY CONTAINER */
 
 .menu_container {
-    background-color: black;
     display: flex;
+    background-color: #32383D;
   }
 
   .menu_items {
@@ -12,26 +12,30 @@
 
   .menu_cart {
       width: 20%;
-      background-color: #fff;
+      background-color: #21272C;
   }
 
   .menu_dishes {
-      display: flex;
-      flex-direction: column;
-      width: 60%;
+      display: grid;
+      grid-template-columns:  1fr 1fr;
+      grid-column-gap: 10px;
+      /* width: 60%; */
+      background-color: #32383D;
+      padding: 10px;
   }
 
   .menu_dishes button {
-    margin-left: 40px;
     margin-bottom: 0;
+    padding: 8px 16px;
+    height: fit-content;
 }
 
 .dish_item {
     display: flex;
     color: #fff;
+    background-color: #21272C;
     margin-bottom: 20px;
-    border-bottom: 2px solid gray;
-    padding: 40px 0;
+    width: fit-content;
 }
 
 .dish_item h2 {
@@ -39,18 +43,30 @@
   }
 
 
-  .menu_dishes h2, .menu_dishes p {
+  .menu_dishes h3, .menu_dishes p {
     text-align: left;
+    width: 70%;
     padding: 0;
     margin-left: 40px;
  }
+
+ .menu_dishes p {
+   font-size: 1.3rem;
+ }
+
  .menu_dishes img {
-     width: 256px;
-     height: 192px;
+     max-width: 256px;
+     /* max-height: 192px; */
  }
 
  .price {
      display: flex;
+     align-items: center;
+ }
+
+ .price p {
+   margin-right: 20px;
+   width: fit-content;
  }
 
 
