@@ -6,29 +6,19 @@ import divideImg from "../../assets/images/patterns/pattern-divide.svg";
 import Button from "../../components/Button/Button";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
+import Cart from "../../components/Cart/Cart";
 
 const Menu = () => {
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("");
   const [length, setLength] = useState("");
   const [menuData, setmenuData] = useState(data);
+  const [cart, setCart] = useState([])
   
   useEffect(() => {
     const filtered = category === '' ? data : data.filter((prop) => prop.category === category);
     setmenuData(filtered);
   }, [category]);
-
-  //  useEffect(() => {
-  //   let filter = [...menuData]
-  //   if (sort === 'lowest') {
-  //     filter.sort((a, b) => a.price - b.price )
-  //   } else if (sort === 'highest') {
-  //     filter.sort((a, b) => b.price - a.price)
-  //   } else {
-  //     filter = menuData;
-  //   } 
-  //   setmenuData(filter)
-  //  }, [sort]) 
 
      const sortHandler = (e) => {
        console.log(e.target.value);
@@ -44,8 +34,34 @@ const Menu = () => {
     setmenuData(filter)
    }
 
+   const cartHandler = (id) => {
+     const updatedCart = [...cart];
+     let alreadyInCart = false;
+     updatedCart.forEach(item => {
+      if (item.id === id) {
+        alreadyInCart = true;
+        item.count++;
+      }
+     })
+     if (!alreadyInCart) {
+      updatedCart.push(menuData.find(item => item.id === id))
+    
+     }
+    
+     setCart(updatedCart);
+   }
+
+   const removeDishHandler = (id) => {
+    const updatedCart = [...cart];
+    const index = updatedCart.find(el => el.id === id)
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+    console.log(updatedCart);
+  }
+
   return (
     <>
+    <main className={classes.menu_wrapper}>
       <Filter
         length={length}
         category={category}
@@ -67,7 +83,7 @@ const Menu = () => {
                     <p>{dish.text}</p>
                     <div className={classes.price}>
                       <p>{dish.price} $</p>
-                      <Button class_name="btn_dark">Add to cart</Button>
+                      <Button class_name="btn_dark" onClick={() => cartHandler(dish.id)}>Add to cart</Button>
                     </div>
                   </div>
                 </li>
@@ -76,9 +92,12 @@ const Menu = () => {
           </ul>
         </div>
 
-        <div className={classes.menu_cart}></div>
+        <div className={classes.menu_cart}>
+          <Cart cartData={cart} removeDishHandler={removeDishHandler}/>
+        </div>
       </section>
       <Footer />
+      </main>
     </>
   );
 };

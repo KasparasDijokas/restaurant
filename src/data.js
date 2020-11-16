@@ -17,6 +17,7 @@ export const data = [
     text:
       "Our locally sourced salmon served with a refreshing buckwheat summer salad.",
     price: 15.99,
+    count: 0
   },
   {
     id: "trout",
@@ -27,6 +28,7 @@ export const data = [
     text:
       "Simply cooked with delicate fresh herbs, lemon and tomatoes, this whole roasted trout is a real treat.",
     price: 8.99,
+    count: 0
   },
   {
     id: "mignon-1",
@@ -37,6 +39,7 @@ export const data = [
     text:
       "Our prime beef served to your taste with a delicious choice of seasonal sides.",
     price: 12.99,
+    count: 0
   },
   {
     id: "wellington",
@@ -47,6 +50,7 @@ export const data = [
     text:
       "Beef Wellington celebrates the luxurious and very tender fillet of beef and.",
     price: 18.99,
+    count: 0
   },
 
   {
@@ -58,6 +62,7 @@ export const data = [
     text:
       "Creamy mousse combined with summer fruits and dark chocolate shavings.",
     price: 7.49,
+    count: 0
   },
   {
     id: "cake",
@@ -68,6 +73,7 @@ export const data = [
     text:
       "TAHINI & YOGHURT SPONGE, POMEGRANATE & ROSE WATER DRIZZLE, PISTACHIO DUST",
     price: 7.49,
+    count: 0
   },
 
   {
@@ -79,6 +85,7 @@ export const data = [
     text:
       "Using a mandolin to make this ribbon salad quickly turns something frumpy into something gorgeous ",
     price: 7.49,
+    count: 0
   },
   {
     id: "greek-salad",
@@ -89,5 +96,6 @@ export const data = [
     text:
       "The fresh, nutty, slightly spicy homemade dressing transforms this simple chicken salad",
     price: 7.49,
+    count: 0
   },
 ];

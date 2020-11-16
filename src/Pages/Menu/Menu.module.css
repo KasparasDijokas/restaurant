@@ -4,6 +4,9 @@
     display: flex;
     background-color: #32383D;
   }
+  .menu_wrapper {
+    background-color: #32383D;
+  }
 
   .menu_items {
     width: 80%;
@@ -13,6 +16,7 @@
   .menu_cart {
       width: 20%;
       background-color: #21272C;
+      margin-top: 20px;
   }
 
   .menu_dishes {
