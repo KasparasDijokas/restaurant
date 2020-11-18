@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import classes from "./Cart.module.css";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 const Cart = (props) => {
   
@@ -24,6 +25,7 @@ const Cart = (props) => {
       </div>
       {props.cartData.map((dish) => {
         return (
+          <Fade left>
           <ul>
             <li className={classes.cart_item} key={dish.alt}>
               <div className={classes.cart_info}>
@@ -45,6 +47,7 @@ const Cart = (props) => {
               </div>
             </li>
           </ul>
+          </Fade>
         );
       })}
       <div className={classes.cart_summary}>
