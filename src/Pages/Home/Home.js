@@ -137,22 +137,22 @@ const Home = () => {
 
         <div className={classes.secondary_dishes}>
           <Dish
-            img={data.fish.salmon.img}
-            alt={data.fish.salmon.alt}
-            heading={data.fish.salmon.heading}
-            text={data.fish.salmon.text}
+            img={data[0].img}
+            alt={data[0].alt}
+            heading={data[0].heading}
+            text={data[0].text}
           />
           <Dish
-            img={data.meat.mignon.img}
-            alt={data.meat.mignon.alt}
-            heading={data.meat.mignon.heading}
-            text={data.meat.mignon.text}
+            img={data[1].img}
+            alt={data[1].alt}
+            heading={data[1].heading}
+            text={data[1].text}
           />
           <Dish
-            img={data.desserts.mousse.img}
-            alt={data.desserts.mousse.alt}
-            heading={data.desserts.mousse.heading}
-            text={data.desserts.mousse.text}
+            img={data[2].img}
+            alt={data[2].alt}
+            heading={data[2].heading}
+            text={data[2].text}
           />
         </div>
       </section>

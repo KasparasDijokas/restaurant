@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Cart.module.css";
 import Button from "../Button/Button";
+import Fade from 'react-reveal/Fade';
 
 const Cart = (props) => {
   const total = props.cartData.reduce((acc, curr) => {
@@ -16,6 +17,7 @@ const Cart = (props) => {
         </div>
       {props.cartData.map((dish) => {
         return (
+          <Fade left cascade>
           <ul>
             <li className={classes.cart_item} key={dish.alt}>
               <div className={classes.cart_info}>
@@ -40,6 +42,7 @@ const Cart = (props) => {
               
             </li>
           </ul>
+          </Fade>
         );
       })}
       <div className={classes.cart_summary}>

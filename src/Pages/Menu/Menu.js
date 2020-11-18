@@ -7,6 +7,7 @@ import Button from "../../components/Button/Button";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
 import Cart from "../../components/Cart/Cart";
+import Fade from 'react-reveal/Fade';
 
 const Menu = () => {
   const [category, setCategory] = useState("");
@@ -73,6 +74,7 @@ const Menu = () => {
       />
       <section className={classes.menu_container}>
         <div className={classes.menu_items}>
+            <Fade bottom cascade={true}>
           <ul className={classes.menu_dishes}>
             {menuData.map((dish) => {
               return (
@@ -90,6 +92,7 @@ const Menu = () => {
               );
             })}
           </ul>
+            </Fade>
         </div>
 
         <div className={classes.menu_cart}>
