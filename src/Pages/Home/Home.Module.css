@@ -7,6 +7,10 @@
   height: 40vh;
 }
 
+.header_img_container nav {
+  display: none;
+}
+
 .header_text_container {
   background-color: black;
   color: #fff;
@@ -160,31 +164,40 @@
 @media screen and (min-width: 992px) {
   .header_container {
     display: flex;
-    height: 550px;
+    max-height: 550px;
   }
+
+  .header_img_container nav {
+    display: flex;
+    padding: 30px;
+    width: 80%;
+    justify-content: space-between;
+  }
+
   .header_text_container {
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding-left: 100px;
+    padding: 20px;
   }
 
   .header_text_container h1 {
-    white-space: nowrap;
+    /* white-space: nowrap;  */
     z-index: 1;
-    margin-right: -200px;
+    padding: 0;
   }
   .header_text_container p {
-    margin-right: -200px;
+    padding: 0;
     z-index: 1;
+    width: 100%;
   }
 
   .header_img_container {
     width: 70%;
-    height: 100%;
+    min-height: 550px;
     background: url("../../assets/images/homepage/hero-bg-desktop.jpg") no-repeat center;
     background-size: cover;
     order: 1;

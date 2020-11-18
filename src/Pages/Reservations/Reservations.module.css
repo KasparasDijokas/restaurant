@@ -1,0 +1,40 @@
+.header {
+    background: url('../../assets/images/booking/hero-bg-desktop.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+    color: #fff;
+    padding: 40px;
+    position: relative;
+}
+
+.order_text {
+    width: 40%;
+    margin-top: 40px;
+}
+
+.order_text p {
+    padding: 0;
+}
+
+/* SECONDARY  */
+
+.checkout_secondary {
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 40vh;
+}
+
+.checkout_secondary h1 {
+    margin: 0;
+}
+
+.order_text_secondary {
+    padding: 40px;
+    width: 40%;
+}
+
+.order_text_secondary p{
+    padding: 0;
+    /* width: 40%; */
+}

@@ -10,6 +10,8 @@ import Dish from "../../components/Dish/Dish";
 import familyImg from "../../assets/images/homepage/family-gathering-mobile@2x.jpg";
 import { data } from "../../data";
 import Footer from "../../components/Footer/Footer";
+import Navigation from "../../components/Navigation/Navigation";
+import {Link} from 'react-router-dom';
 
 const Home = () => {
   const [buttonState, setButtonState] = useState({
@@ -49,9 +51,10 @@ const Home = () => {
   return (
     <main className={classes.main_container}>
       <header className={classes.header_container}>
-        <div className={classes.header_img_container}></div>
+        <div className={classes.header_img_container}>
+          <Navigation/>
+        </div>
         <div className={classes.header_text_container}>
-          <h2>dine</h2>
           <h1>Exquisite dining since 1989</h1>
           <p>
             Experience our seasonal menu in beautiful country surroundings. Eat
@@ -92,6 +95,7 @@ const Home = () => {
               for everyone. We can even arrange a tour of the farm before your
               meal.
             </p>
+           <Link to="/reservations"><Button class_name="btn_light">Reserve a table</Button></Link> 
           </div>
         </div>
         <div className={classes.intro_two}>
@@ -120,6 +124,7 @@ const Home = () => {
               So you can be sure that you're eating the freshest, most
               sustainable food
             </p>
+            <Link to="/menu"><Button class_name="btn_light">Order Now</Button></Link>
           </div>
         </div>
       </section>
@@ -132,27 +137,27 @@ const Home = () => {
             We cater for all dietary requirements, but here's a glimpse at some
             of our diner's favourites. Our menu is revamped every season.
           </p>
-          <Button class_name="btn_dark">ORDER NOW</Button>
+          <Link to="/menu"><Button class_name="btn_dark">ORDER NOW</Button></Link>
         </div>
 
         <div className={classes.secondary_dishes}>
           <Dish
-            img={data.fish.salmon.img}
-            alt={data.fish.salmon.alt}
-            heading={data.fish.salmon.heading}
-            text={data.fish.salmon.text}
+            img={data[0].img}
+            alt={data[0].alt}
+            heading={data[0].heading}
+            text={data[0].text}
           />
           <Dish
-            img={data.meat.mignon.img}
-            alt={data.meat.mignon.alt}
-            heading={data.meat.mignon.heading}
-            text={data.meat.mignon.text}
+            img={data[1].img}
+            alt={data[1].alt}
+            heading={data[1].heading}
+            text={data[1].text}
           />
           <Dish
-            img={data.desserts.mousse.img}
-            alt={data.desserts.mousse.alt}
-            heading={data.desserts.mousse.heading}
-            text={data.desserts.mousse.text}
+            img={data[2].img}
+            alt={data[2].alt}
+            heading={data[2].heading}
+            text={data[2].text}
           />
         </div>
       </section>
@@ -238,7 +243,7 @@ const Home = () => {
               memorable experience for all.
             </p>
           </div>
-          <Button class_name="btn_light">ORDER NOW</Button>
+          <Link to="/menu"><Button class_name="btn_light">ORDER NOW</Button></Link>
         </div>
       </section>
       <Footer />
