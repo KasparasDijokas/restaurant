@@ -8,6 +8,10 @@ import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
 import Cart from "../../components/Cart/Cart";
 import Navigation from "../../components/Navigation/Navigation";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+import Modal from "react-modal";
+Modal.setAppElement('#root')
 
 const Menu = () => {
   const [category, setCategory] = useState("");
@@ -24,6 +28,7 @@ const Menu = () => {
     time: "",
     order: cart,
   });
+  const [productModal, setProductModal] = useState(null);
 
   const totalPrice = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.count;
@@ -79,6 +84,7 @@ const Menu = () => {
 
   const modalHandler = () => {
     setModal(false);
+    console.log(modal);
   };
 
   const userInputHandler = (e) => {
@@ -90,8 +96,16 @@ const Menu = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-
     console.log(userInput);
+    setModal(false);
+  };
+
+  const openModal = (dish) => {
+    setProductModal({ dish });
+  };
+
+  const closeModal = () => {
+    setProductModal(null);
   };
 
   return (
@@ -108,28 +122,34 @@ const Menu = () => {
         />
         <section className={classes.menu_container}>
           <div className={classes.menu_items}>
-            <ul className={classes.menu_dishes}>
-              {menuData.map((dish) => {
-                return (
-                  <li className={classes.dish_item} key={dish.alt}>
-                    <img src={dish.img} alt={dish.alt}></img>
-                    <div>
-                      <h3>{dish.heading}</h3>
-                      <p>{dish.text}</p>
-                      <div className={classes.price}>
-                        <p>{dish.price} $</p>
-                        <Button
-                          class_name="btn_dark"
-                          onClick={() => cartHandler(dish.id)}
-                        >
-                          Add to cart
-                        </Button>
+            <Fade bottom cascade>
+              <ul className={classes.menu_dishes}>
+                {menuData.map((dish) => {
+                  return (
+                    <li
+                      className={classes.dish_item}
+                      key={dish.alt}
+                      onClick={() => openModal(dish)}
+                    >
+                      <img src={dish.img} alt={dish.alt}></img>
+                      <div>
+                        <h3>{dish.heading}</h3>
+                        <p>{dish.text}</p>
+                        <div className={classes.price}>
+                          <p>{dish.price} $</p>
+                          <Button
+                            class_name="btn_dark"
+                            onClick={() => cartHandler(dish.id)}
+                          >
+                            Add to cart
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </Fade>
           </div>
 
           <div className={classes.menu_cart}>
@@ -141,67 +161,73 @@ const Menu = () => {
             />
           </div>
         </section>
-        <Footer />
-        <div
-          className={modal ? `${classes.modal_show}` : `${classes.modal_hide}`}
-          onClick={modalHandler}
-        ></div>
-        <form
-          className={
-            modal ? `${classes.menu_form}` : `${classes.menu_form_hide}`
-          }
-        >
-          <li>
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              required
-              onChange={userInputHandler}
-            ></input>
-          </li>
-          <li>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              required
-              onChange={userInputHandler}
-            ></input>
-          </li>
-          <li>
-            <input
-              type="text"
-              placeholder="Address"
-              name="address"
-              required
-              onChange={userInputHandler}
-            ></input>
-          </li>
-          <li className={classes.date}>
-            <label>Pick a delivery date</label>
-            <input
-              type="date"
-              placeholder=""
-              name="date"
-              onChange={userInputHandler}
-            ></input>
-          </li>
-          <li className={classes.date}>
-            <label>Pick a delivery time</label>
-            <input
-              type="time"
-              placeholder="Name"
-              name="time"
-              onChange={userInputHandler}
-            ></input>
-          </li>
+        {modal && (
+          <Modal
+              isOpen={modal}
+              onRequestClose={modalHandler}
+              shouldCloseOnOverlayClick={true}
+              className={classes.modal_show}
+              overlayClassName={classes.modal_overlay}
+              contentLabel={
+                "Example Modal"}
+            >
+                            <Zoom>
+              <form className={classes.menu_form}>
+                <li>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    required
+                    onChange={userInputHandler}
+                  ></input>
+                </li>
+                <li>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    required
+                    onChange={userInputHandler}
+                  ></input>
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    name="address"
+                    required
+                    onChange={userInputHandler}
+                  ></input>
+                </li>
+                <li className={classes.date}>
+                  <label>Pick a delivery date</label>
+                  <input
+                    type="date"
+                    placeholder=""
+                    name="date"
+                    onChange={userInputHandler}
+                  ></input>
+                </li>
+                <li className={classes.date}>
+                  <label>Pick a delivery time</label>
+                  <input
+                    type="time"
+                    placeholder="Name"
+                    name="time"
+                    onChange={userInputHandler}
+                  ></input>
+                </li>
 
-          <Button onClick={submitForm} class_name="btn_light">
-            ORDER NOW
-          </Button>
-          <li className={classes.form_price}>Total: {totalPrice} $</li>
-        </form>
+                <Button onClick={submitForm} class_name="btn_light">
+                  ORDER NOW
+                </Button>
+                <li className={classes.form_price}>Total: {totalPrice} $</li>
+              </form>
+          </Zoom>
+            </Modal>
+        )}
+        <Footer />
       </main>
     </>
   );
