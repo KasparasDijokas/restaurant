@@ -2,9 +2,9 @@ import React from 'react';
 import classes from './Footer.module.css';
 import Button from '../Button/Button';
 
-const Footer = () => {
+const Footer = (props) => {
     return (
-        <section className={classes.footer_container}>
+        <section className={props.desktop ? `${classes.footer_container} ${classes.desktop}` : `${classes.footer_container}`}>
             <div className={classes.footer_img_container}>
                 <h1>Ready to order?</h1>
                 <Button class_name="btn_dark">ORDER NOW</Button>

@@ -6,6 +6,7 @@
     font-size: 1.8rem;
     margin-bottom: 80px;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 .btn_light {
@@ -16,6 +17,7 @@
     margin-bottom: 80px;
     transition: all .2s ease-in-out;
     font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .btn_dark:hover {
