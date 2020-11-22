@@ -57,6 +57,10 @@
   margin: auto;
 }
 
+.intro_two_text button {
+  margin-bottom: 40px;
+}
+
 .intro_one_image,
 .intro_two_image {
   margin-bottom: 20px;
@@ -66,6 +70,7 @@
 
 .secondary_container {
   background-color: black;
+  padding-bottom: 60px;
 }
 
 .secondary_info {
@@ -92,13 +97,15 @@
 .offers_container {
   text-align: center;
   padding: 80px 0;
+  display: flex;
 }
 
-.offers_container img {
+/* .offers_container img {
   width: 80%;
   margin: auto;
   margin-bottom: 40px;
-}
+} */
+
 
 .offers_button {
   color: var(--secondary-clay);
@@ -161,7 +168,7 @@
   display: block;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
   .header_container {
     display: flex;
     max-height: 550px;
@@ -169,7 +176,7 @@
 
   .header_img_container nav {
     display: flex;
-    padding: 30px;
+    padding: 20px;
     width: 80%;
     justify-content: space-between;
   }
@@ -181,11 +188,11 @@
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding: 20px;
+    padding: 20px 20px;
   }
 
   .header_text_container h1 {
-    /* white-space: nowrap;  */
+    margin: 0;
     z-index: 1;
     padding: 0;
   }
@@ -193,6 +200,7 @@
     padding: 0;
     z-index: 1;
     width: 100%;
+    margin: 40px 0;
   }
 
   .header_img_container {
@@ -224,17 +232,19 @@
   }
   
   .intro_one {
-    top: 0;
-  }
-  .intro_one_image {
     position: relative;
     top: -20px;
+  }
+
+  .intro_two {
+    position: relative;
+    bottom: -20px;
+  }
+  .intro_one_image {
     width: 50%;
   }
   .intro_two_image {
     width: 50%;
-    position: relative;
-    bottom: -20px;
   }
 
   .intro_one_text, .intro_two_text {
@@ -255,15 +265,19 @@
     align-items: flex-start;
     margin-right: 80px;
   }
-  .intro_one_text p, .intro_one_text h2 {
+
+  .intro_container p {
     width: 100%;
     text-align: left;
     padding: 0;
   }
-  .intro_two_text p, .intro_two_text h2 {
+  .intro_container h2 {
     width: 100%;
-    text-align: left;
-    padding: 0;
+    text-align: left
+  }
+  
+  .intro_container button {
+    margin-bottom: 0;
   }
 
   /* SECONDARY CONTAINER  */
@@ -302,22 +316,25 @@
   .offers_container {
     display: flex;
     width: 80%;
-
     margin: auto;
   }
 
-  .offers_container img {
+  .food_group_container {
+    padding-bottom: 40px;
+  }
+
+  /* .offers_container img {
     max-width: 440px;
     max-height: 500px;
-  }
+  } */
 
   .offers_container_info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: left;
     align-items: flex-start;
     margin-left: 80px;
+    width: 50%;
   }
 
   .offers_container_controls {
@@ -340,4 +357,21 @@
     padding: 0;
     width: 80%;
   }
+  
+  .meatImg {
+    width: 50%;
+    background: url('../../assets/images/homepage/family-gathering-desktop.jpg') no-repeat center;
+    background-size: cover;
+  }
+  .fishImg {
+    width: 50%;
+    background: url('../../assets/images/homepage/locally-sourced-desktop.jpg') no-repeat center;
+    background-size: cover;
+  }
+  .dessertsImg {
+    width: 50%;
+    background: url('../../assets/images/homepage/chocolate-desktop-tablet@2x.jpg') no-repeat center;
+    background-size: cover;
+  }
+  
 }

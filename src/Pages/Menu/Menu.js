@@ -111,8 +111,14 @@ const Menu = () => {
   return (
     <>
       <main className={classes.menu_wrapper}>
+        <div className={classes.menu_header}>
         <Navigation />
-        <Filter
+
+        </div>
+      
+        <section className={classes.menu_container}>
+          <div className={classes.menu_text}>
+          <Filter
           category={category}
           sort={sort}
           setCategory={setCategory}
@@ -120,32 +126,29 @@ const Menu = () => {
           length={menuData.length}
           sortHandler={sortHandler}
         />
-        <section className={classes.menu_container}>
+          <img src={divideImg} alt="pattern-divide" />
+          <h2>A few highlights from our menu</h2>
+          <p>
+            We cater for all dietary requirements, but here's a glimpse at some
+            of our diner's favourites. Our menu is revamped every season.
+          </p>
+          </div>
           <div className={classes.menu_items}>
             <Fade bottom cascade>
               <ul className={classes.menu_dishes}>
                 {menuData.map((dish) => {
                   return (
-                    <li
-                      className={classes.dish_item}
-                      key={dish.alt}
-                      onClick={() => openModal(dish)}
-                    >
-                      <img src={dish.img} alt={dish.alt}></img>
-                      <div>
-                        <h3>{dish.heading}</h3>
-                        <p>{dish.text}</p>
-                        <div className={classes.price}>
-                          <p>{dish.price} $</p>
-                          <Button
-                            class_name="btn_dark"
-                            onClick={() => cartHandler(dish.id)}
-                          >
-                            Add to cart
-                          </Button>
-                        </div>
+                    <div className={classes.dish_item}>
+                    <img src={dish.img} alt={dish.alt} />
+                    <div className={classes.dish_item_text}>
+                      <h3>{dish.heading}</h3>
+                      <div className={classes.dish_item_btn}>
+                        <p>{dish.price} $</p>
+                        <Button class_name="btn_light" onClick={() => cartHandler(dish.id)}>Add to cart</Button>
                       </div>
-                    </li>
+                    </div>
+                  </div>
+
                   );
                 })}
               </ul>

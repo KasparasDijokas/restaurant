@@ -21,5 +21,13 @@
 
 .nav a:hover {
     transform: scale(.9);
+    color: gray;
+}
+
+.selected  {
+    color: red;
+}
+
+.active {
     color: red;
 }

@@ -7,7 +7,7 @@ const Filter = (props) => {
             <h3>Dishes: {props.length}</h3>
         <div className={classes.category}>
           <select onChange={(e) => props.setCategory(e.target.value)}>
-            <option value="">All</option>
+            <option value="">Category</option>
             <option value="meat">Meat</option>
             <option value="fish">Fish</option>
             <option value="desserts">Dessert</option>
