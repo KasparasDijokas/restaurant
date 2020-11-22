@@ -24,7 +24,7 @@ export const data = [
     category: 'fish',
     alt: "trout",
     img: trout,
-    heading: "Mary Berry's whole roasted trout",
+    heading: "Mary whole roasted trout",
     text:
       "Simply cooked with delicate fresh herbs, lemon and tomatoes, this whole roasted trout is a real treat.",
     price: 8.99,
@@ -58,7 +58,7 @@ export const data = [
     category: 'desserts',
     alt: "mousse",
     img: mousseImg,
-    heading: "Summer Fruit Chocolate Mousse",
+    heading: "Fruit Chocolate Mousse",
     text:
       "Creamy mousse combined with summer fruits and dark chocolate shavings.",
     price: 7.49,

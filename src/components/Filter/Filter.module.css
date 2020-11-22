@@ -1,10 +1,8 @@
 .filter {
     display: flex;
-    width: 80%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: #32383D;
-    color: #fff;
+    margin-bottom: 20px;
 }
 
 .category, .price {
@@ -17,15 +15,37 @@
 }
 
 .filter select {
-    background-color: #21272C;
-    border: none;
-    padding: 10px 20px;
+    padding: 6px 20px;
     font-size: 1.8rem;
     margin-left: 10px;
-    color: #fff;
     border-radius: 8px;
     outline: none;
     appearance: none;
     text-align: center;
     text-align-last: center;
+    cursor: pointer;
 }
+
+.filter select:hover {
+    background-color: black;
+    color: #fff;
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }

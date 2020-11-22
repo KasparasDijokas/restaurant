@@ -60,7 +60,7 @@ const Home = () => {
             Experience our seasonal menu in beautiful country surroundings. Eat
             the freshest produce from the comfort of our farmhouse.
           </p>
-          <Button class_name="btn_dark">BOOK A TABLE</Button>
+         <Link to="/reservations"><Button styleName="btn_dark">BOOK A TABLE</Button></Link>
         </div>
       </header>
 
@@ -73,7 +73,7 @@ const Home = () => {
                 srcset={intro_one_img_mobile}
               />
               <source
-                media="(min-width: 992px)"
+                media="(min-width: 1025px)"
                 srcset={intro_one_img_desktop}
               />
               <img
@@ -95,7 +95,7 @@ const Home = () => {
               for everyone. We can even arrange a tour of the farm before your
               meal.
             </p>
-           <Link to="/reservations"><Button class_name="btn_light">Reserve a table</Button></Link> 
+           <Link to="/reservations"><Button styleName="btn_light">Reserve a table</Button></Link> 
           </div>
         </div>
         <div className={classes.intro_two}>
@@ -106,7 +106,7 @@ const Home = () => {
                 srcset={intro_two_img_mobile}
               />
               <source
-                media="(min-width: 992px)"
+                media="(min-width: 1025px)"
                 srcset={intro_two_img_desktop}
               />
               <img
@@ -124,7 +124,7 @@ const Home = () => {
               So you can be sure that you're eating the freshest, most
               sustainable food
             </p>
-            <Link to="/menu"><Button class_name="btn_light">Order Now</Button></Link>
+            <Link to="/menu"><Button styleName="btn_light">Order Now</Button></Link>
           </div>
         </div>
       </section>
@@ -137,7 +137,7 @@ const Home = () => {
             We cater for all dietary requirements, but here's a glimpse at some
             of our diner's favourites. Our menu is revamped every season.
           </p>
-          <Link to="/menu"><Button class_name="btn_dark">ORDER NOW</Button></Link>
+          <Link to="/menu"><Button styleName="btn_dark">ORDER NOW</Button></Link>
         </div>
 
         <div className={classes.secondary_dishes}>
@@ -163,7 +163,13 @@ const Home = () => {
       </section>
 
       <section className={classes.offers_container}>
-        <img src={familyImg} alt="family" />
+   
+    <div className={buttonState.meat ? classes.meatImg : classes.meatImg_hide} alt="family" ></div>
+        <div className={buttonState.fish ? classes.fishImg : classes.fishImg_hide} alt="family" ></div>
+        <div className={buttonState.dessert ? classes.dessertsImg : classes.dessertsImg_hide} alt="family" ></div>
+ 
+   
+
         <div className={classes.offers_container_info}>
           <div className={classes.offers_container_controls}>
             <button
@@ -214,6 +220,7 @@ const Home = () => {
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
+            <Link to="/menu"><Button styleName="btn_light">BOOK A TABLE</Button></Link>
           </div>
           <div
             className={
@@ -222,12 +229,13 @@ const Home = () => {
                 : `${classes.food_group_container}`
             }
           >
-            <h2>2</h2>
+            <h2>Amazing nature</h2>
             <p>
               We love catering for entire families. So please bring everyone
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
+            <Link to="/menu"><Button styleName="btn_light">ORDER NOW</Button></Link>
           </div>
           <div
             className={
@@ -236,17 +244,17 @@ const Home = () => {
                 : `${classes.food_group_container}`
             }
           >
-            <h2>3</h2>
+            <h2>Delicious food</h2>
             <p>
               We love catering for entire families. So please bring everyone
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
+            <Link to="/menu"><Button styleName="btn_light">ORDER NOW</Button></Link>
           </div>
-          <Link to="/menu"><Button class_name="btn_light">ORDER NOW</Button></Link>
         </div>
       </section>
-      <Footer />
+      <Footer desktop={true}/>
     </main>
   );
 };

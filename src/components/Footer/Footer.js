@@ -7,7 +7,7 @@ const Footer = (props) => {
         <section className={props.desktop ? `${classes.footer_container} ${classes.desktop}` : `${classes.footer_container}`}>
             <div className={classes.footer_img_container}>
                 <h1>Ready to order?</h1>
-                <Button class_name="btn_dark">ORDER NOW</Button>
+                <Button styleName="btn_dark">ORDER NOW</Button>
             </div>
             <div className={classes.footer_contact_container}>
                 <h2>dine</h2>
