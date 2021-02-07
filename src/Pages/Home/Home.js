@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import classes from "./Home.Module.css";
-import Button from "../../components/Button/Button";
-import intro_one_img_desktop from "../../assets/images/homepage/enjoyable-place-mobile@2x.jpg";
-import intro_one_img_mobile from "../../assets/images/homepage/enjoyable-place-tablet@2x.jpg";
-import intro_two_img_desktop from "../../assets/images/homepage/locally-sourced-mobile@2x.jpg";
-import intro_two_img_mobile from "../../assets/images/homepage/locally-sourced-tablet@2x.jpg";
-import divideImg from "../../assets/images/patterns/pattern-divide.svg";
-import Dish from "../../components/Dish/Dish";
-import familyImg from "../../assets/images/homepage/family-gathering-mobile@2x.jpg";
-import { data } from "../../data";
-import Footer from "../../components/Footer/Footer";
-import Navigation from "../../components/Navigation/Navigation";
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import classes from './Home.Module.css';
+import Button from '../../components/Button/Button';
+import intro_one_img_desktop from '../../assets/images/homepage/enjoyable-place-mobile@2x.jpg';
+import intro_one_img_mobile from '../../assets/images/homepage/enjoyable-place-tablet@2x.jpg';
+import intro_two_img_desktop from '../../assets/images/homepage/locally-sourced-mobile@2x.jpg';
+import intro_two_img_mobile from '../../assets/images/homepage/locally-sourced-tablet@2x.jpg';
+import divideImg from '../../assets/images/patterns/pattern-divide.svg';
+import Dish from '../../components/Dish/Dish';
+import { data } from '../../data';
+import Footer from '../../components/Footer/Footer';
+import Navigation from '../../components/Navigation/Navigation';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [buttonState, setButtonState] = useState({
@@ -22,21 +21,21 @@ const Home = () => {
 
   const buttonHandler = (e) => {
     switch (e.target.name) {
-      case "meat":
+      case 'meat':
         setButtonState({
           meat: true,
           fish: false,
           dessert: false,
         });
         break;
-      case "fish":
+      case 'fish':
         setButtonState({
           meat: false,
           fish: true,
           dessert: false,
         });
         break;
-      case "dessert":
+      case 'dessert':
         setButtonState({
           meat: false,
           fish: false,
@@ -52,7 +51,7 @@ const Home = () => {
     <main className={classes.main_container}>
       <header className={classes.header_container}>
         <div className={classes.header_img_container}>
-          <Navigation/>
+          <Navigation />
         </div>
         <div className={classes.header_text_container}>
           <h1>Exquisite dining since 1989</h1>
@@ -60,7 +59,9 @@ const Home = () => {
             Experience our seasonal menu in beautiful country surroundings. Eat
             the freshest produce from the comfort of our farmhouse.
           </p>
-         <Link to="/reservations"><Button styleName="btn_dark">BOOK A TABLE</Button></Link>
+          <Link to="/reservations">
+            <Button class_name="btn_dark">BOOK A TABLE</Button>
+          </Link>
         </div>
       </header>
 
@@ -70,11 +71,11 @@ const Home = () => {
             <picture>
               <source
                 media="(max-width: 992px)"
-                srcset={intro_one_img_mobile}
+                srcSet={intro_one_img_mobile}
               />
               <source
                 media="(min-width: 1025px)"
-                srcset={intro_one_img_desktop}
+                srcSet={intro_one_img_desktop}
               />
               <img
                 className={classes.intro_one_image}
@@ -95,19 +96,21 @@ const Home = () => {
               for everyone. We can even arrange a tour of the farm before your
               meal.
             </p>
-           <Link to="/reservations"><Button styleName="btn_light">Reserve a table</Button></Link> 
+            <Link to="/reservations">
+              <Button class_name="btn_light">Reserve a table</Button>
+            </Link>
           </div>
         </div>
         <div className={classes.intro_two}>
           <div className={classes.intro_two_image}>
-          <picture>
+            <picture>
               <source
                 media="(max-width: 992px)"
-                srcset={intro_two_img_mobile}
+                srcSet={intro_two_img_mobile}
               />
               <source
                 media="(min-width: 1025px)"
-                srcset={intro_two_img_desktop}
+                srcSet={intro_two_img_desktop}
               />
               <img
                 className={classes.intro_two_image}
@@ -124,7 +127,9 @@ const Home = () => {
               So you can be sure that you're eating the freshest, most
               sustainable food
             </p>
-            <Link to="/menu"><Button styleName="btn_light">Order Now</Button></Link>
+            <Link to="/menu">
+              <Button class_name="btn_light">Order Now</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -137,7 +142,9 @@ const Home = () => {
             We cater for all dietary requirements, but here's a glimpse at some
             of our diner's favourites. Our menu is revamped every season.
           </p>
-          <Link to="/menu"><Button styleName="btn_dark">ORDER NOW</Button></Link>
+          <Link to="/menu">
+            <Button class_name="btn_dark">ORDER NOW</Button>
+          </Link>
         </div>
 
         <div className={classes.secondary_dishes}>
@@ -163,12 +170,20 @@ const Home = () => {
       </section>
 
       <section className={classes.offers_container}>
-   
-    <div className={buttonState.meat ? classes.meatImg : classes.meatImg_hide} alt="family" ></div>
-        <div className={buttonState.fish ? classes.fishImg : classes.fishImg_hide} alt="family" ></div>
-        <div className={buttonState.dessert ? classes.dessertsImg : classes.dessertsImg_hide} alt="family" ></div>
- 
-   
+        <div
+          className={buttonState.meat ? classes.meatImg : classes.meatImg_hide}
+          alt="family"
+        ></div>
+        <div
+          className={buttonState.fish ? classes.fishImg : classes.fishImg_hide}
+          alt="family"
+        ></div>
+        <div
+          className={
+            buttonState.dessert ? classes.dessertsImg : classes.dessertsImg_hide
+          }
+          alt="family"
+        ></div>
 
         <div className={classes.offers_container_info}>
           <div className={classes.offers_container_controls}>
@@ -220,7 +235,9 @@ const Home = () => {
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
-            <Link to="/menu"><Button styleName="btn_light">BOOK A TABLE</Button></Link>
+            <Link to="/reservations">
+              <Button class_name="btn_light">BOOK A TABLE</Button>
+            </Link>
           </div>
           <div
             className={
@@ -235,7 +252,9 @@ const Home = () => {
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
-            <Link to="/menu"><Button styleName="btn_light">ORDER NOW</Button></Link>
+            <Link to="/menu">
+              <Button class_name="btn_light">ORDER NOW</Button>
+            </Link>
           </div>
           <div
             className={
@@ -250,11 +269,13 @@ const Home = () => {
               along for special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
-            <Link to="/menu"><Button styleName="btn_light">ORDER NOW</Button></Link>
+            <Link to="/menu">
+              <Button class_name="btn_light">ORDER NOW</Button>
+            </Link>
           </div>
         </div>
       </section>
-      <Footer desktop={true}/>
+      <Footer desktop={true} />
     </main>
   );
 };

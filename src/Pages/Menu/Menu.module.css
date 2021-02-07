@@ -20,19 +20,23 @@
   display: flex;
   padding: 20px;
   flex-grow: 1;
+  position: relative;
 }
-
 
 .menu_items {
   width: 40%;
 }
 
 .menu_text {
-  width: 40%;
+  width: 100%;
   position: sticky;
   top: 0;
   padding: 20px 40px 0 0;
   margin-top: 10px;
+}
+
+.menu_tablet_container {
+  width: 40%;
 }
 
 .menu_text p {
@@ -77,7 +81,7 @@
   justify-content: space-between;
 }
 
-.dish_item_btn button{
+.dish_item_btn button {
   padding: 4px 8px;
 }
 
@@ -113,7 +117,6 @@
 }
 
 .modal_show {
-
   background-color: #fff;
   width: 480px;
   height: 425px;
@@ -147,8 +150,8 @@
   font-size: 1.2rem;
 }
 
-.menu_form input[type="text"],
-.menu_form input[type="email"] {
+.menu_form input[type='text'],
+.menu_form input[type='email'] {
   width: 100%;
   border: none;
   border-bottom: 2px solid gray;
@@ -157,8 +160,8 @@
   outline: none;
 }
 
-.menu_form input[type="date"],
-.menu_form input[type="time"] {
+.menu_form input[type='date'],
+.menu_form input[type='time'] {
   width: 100%;
   border: none;
   border-bottom: 2px solid gray;
@@ -184,4 +187,104 @@
 
 .menu_wrapper footer {
   flex-shrink: 0;
+}
+
+.menu_container i {
+  /* display: none; */
+}
+
+
+@media (max-width: 1280px) {
+  .menu_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu_tablet_container {
+    display: flex;
+    width: 100%;
+  }
+  .mobile_cart {
+    width: 50%;
+  }
+  .menu_text {
+    width: 50%;
+  }
+
+  .menu_cart {
+    display: none;
+  }
+
+  .dish_item_text {
+    width: auto;
+    justify-content: left;
+  }
+
+  .menu_text {
+    width: 80%;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+
+  }
+  .menu_text h2 {
+    text-align: center;
+    margin-top: 0;
+    width: 80%;
+
+  }
+  .menu_text p {
+    text-align: center;
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .menu_items {
+    width: 100%;
+  }
+
+  .dish_item_btn {
+
+    justify-content: flex-start;
+  }
+
+.menu_dishes p {
+  margin: 0 40px;
+}
+
+  @media(max-width: 850px) {
+    .menu_tablet_container {
+      flex-direction: column;
+    }
+
+    .mobile_cart {
+      width: 100%;
+    }
+
+    .menu_text {
+      width: 100%;
+    }
+
+
+  }
+
+  /* .mobile_cart {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  .menu_container i {
+    font-size: 2.5rem;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    z-index: 2;
+  } */
 }

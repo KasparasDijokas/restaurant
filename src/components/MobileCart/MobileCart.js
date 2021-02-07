@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Cart.module.css';
+import classes from './mobileCart.module.css';
 import Button from '../Button/Button';
 import Fade from 'react-reveal/Fade';
 
-const Cart = (props) => {
+const MobileCart = (props) => {
   const total = props.cartData.reduce((acc, curr) => {
     return acc + curr.price * curr.count;
   }, 0);
@@ -26,7 +26,7 @@ const Cart = (props) => {
           return (
             <Fade left key={index}>
               <ul key={index}>
-                <li className={classes.cart_item} key={dish.alt}>
+                <li className={classes.cart_item} key={index}>
                   <div className={classes.cart_info}>
                     <img src={dish.img} alt={dish.alt}></img>
                     <div>
@@ -61,4 +61,4 @@ const Cart = (props) => {
   );
 };
 
-export default Cart;
+export default MobileCart;

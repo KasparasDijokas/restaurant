@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Menu.module.css";
 import { data } from "../../data";
-import Dish from "../../components/Dish/Dish";
-import divideImg from "../../assets/images/patterns/pattern-divide.svg";
 import Button from "../../components/Button/Button";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
@@ -11,9 +9,14 @@ import Navigation from "../../components/Navigation/Navigation";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import Modal from "react-modal";
+import { animateScroll } from 'react-scroll';
+import MobileCart from "../../components/MobileCart/MobileCart";
 Modal.setAppElement('#root')
 
 const Menu = () => {
+  useEffect(() => {
+    animateScroll.scrollToTop();
+  }, [])
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("");
   const [menuData, setmenuData] = useState(data);
@@ -84,7 +87,6 @@ const Menu = () => {
 
   const modalHandler = () => {
     setModal(false);
-    console.log(modal);
   };
 
   const userInputHandler = (e) => {
@@ -100,23 +102,23 @@ const Menu = () => {
     setModal(false);
   };
 
-  const openModal = (dish) => {
-    setProductModal({ dish });
-  };
-
-  const closeModal = () => {
-    setProductModal(null);
-  };
-
   return (
     <>
       <main className={classes.menu_wrapper}>
         <div className={classes.menu_header}>
         <Navigation />
-
         </div>
       
         <section className={classes.menu_container}>
+          <div className={classes.menu_tablet_container}>
+          <div className={classes.mobile_cart}>
+            <MobileCart 
+            cartData={cart}
+            removeDishHandler={removeDishHandler}
+            modal={modal}
+            setModal={setModal}
+            />
+          </div>
           <div className={classes.menu_text}>
           <Filter
           category={category}
@@ -126,19 +128,19 @@ const Menu = () => {
           length={menuData.length}
           sortHandler={sortHandler}
         />
-          <img src={divideImg} alt="pattern-divide" />
           <h2>A few highlights from our menu</h2>
           <p>
             We cater for all dietary requirements, but here's a glimpse at some
             of our diner's favourites. Our menu is revamped every season.
           </p>
           </div>
+          </div>
           <div className={classes.menu_items}>
             <Fade bottom cascade>
               <ul className={classes.menu_dishes}>
-                {menuData.map((dish) => {
+                {menuData.map((dish, index) => {
                   return (
-                    <div className={classes.dish_item}>
+                    <div className={classes.dish_item} key={index}>
                     <img src={dish.img} alt={dish.alt} />
                     <div className={classes.dish_item_text}>
                       <h3>{dish.heading}</h3>

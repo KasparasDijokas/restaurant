@@ -1,51 +1,61 @@
 .filter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 18px;
 }
 
-.category, .price {
-    display: flex;
-    justify-content: space-between;
+.category,
+.price {
+  display: flex;
+  justify-content: space-between;
 }
 
 .filter h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .filter select {
-    padding: 6px 20px;
-    font-size: 1.8rem;
-    margin-left: 10px;
-    border-radius: 8px;
-    outline: none;
-    appearance: none;
-    text-align: center;
-    text-align-last: center;
-    cursor: pointer;
+  padding: 6px 20px;
+  font-size: 1.8rem;
+  margin-left: 10px;
+  border-radius: 8px;
+  outline: none;
+  appearance: none;
+  text-align: center;
+  text-align-last: center;
+  cursor: pointer;
 }
 
 .filter select:hover {
-    background-color: black;
-    color: #fff;
+  background-color: black;
+  color: #fff;
 }
 
 /* Arrow */
 .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: #34495e;
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+@media (max-width: 1280px) {
+  .filter {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
   }
-  /* Transition */
-  .select:hover::after {
-    color: #f39c12;
-  }
+}

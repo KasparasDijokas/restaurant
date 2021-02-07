@@ -1,33 +1,33 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav h2 {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.4rem;
-    padding: 8px 16px;
-    font-weight: bold;
-    transition: all .3s ease-in-out;
-    letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
 }
 
 .nav a:hover {
-    transform: scale(.9);
-    color: gray;
+  transform: scale(0.9);
+  color: gray;
 }
 
-.selected  {
-    color: red;
+.selected {
+  color: red;
 }
 
 .active {
-    color: red;
+  color: red;
 }

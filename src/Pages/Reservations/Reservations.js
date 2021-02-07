@@ -3,8 +3,11 @@ import Footer from "../../components/Footer/Footer";
 import classes from "./Reservations.module.css";
 import Form from "../../components/Form/Form";
 import Navigation from "../../components/Navigation/Navigation";
+import { animateScroll } from 'react-scroll';
 
 const Checkout = () => {
+  animateScroll.scrollToTop();
+
   return (
     <main className={classes.checkout_container}>
       <section className={classes.header}>

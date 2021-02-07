@@ -11,6 +11,7 @@
 .order_text {
     width: 40%;
     margin-top: 40px;
+    position: relative;
 }
 
 .order_text p {
@@ -37,4 +38,20 @@
 .order_text_secondary p{
     padding: 0;
     /* width: 40%; */
+}
+
+@media (max-width: 1150px) {
+    .order_text {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .order_text_secondary {
+        display: none;
+    }
+
+    .checkout_secondary {
+        height: 60vh;
+    }
 }

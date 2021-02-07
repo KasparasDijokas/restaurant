@@ -1,68 +1,83 @@
 /* FORM  */
 
 .form_container form {
-    background-color: #fff;
-    width: 480px;
-    height: 425px;
-    position: absolute;
-    right: 160px;
-    top: 200px;
-    padding: 20px 0;
-    text-align: center;
-    z-index: 1;
- }
+  background-color: #fff;
+  width: 480px;
+  height: 425px;
+  position: absolute;
+  right: 160px;
+  top: 200px;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1;
+}
 
 .form_container form li {
-   width: 80%;
-   margin: auto;
-   list-style: none;
+  width: 80%;
+  margin: auto;
+  list-style: none;
 }
 
 .form_container label {
-    width: 30%;
-    font-size: 1.2rem;
+  width: 30%;
+  font-size: 1.2rem;
 }
 
-.form_container form input[type="text"], .form_container form input[type="email"] {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid gray;
-    margin: 0 auto 12px;
-    padding: 8px 16px;
-    outline: none;
+.form_container form input[type='text'],
+.form_container form input[type='email'] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin: 0 auto 12px;
+  padding: 8px 16px;
+  outline: none;
 }
 
-input[type="date"], input[type="time"] {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid gray;
-    margin: 0 auto 12px;
-    padding: 8px 16px;
-    outline: none;
+input[type='date'],
+input[type='time'] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin: 0 auto 12px;
+  padding: 8px 16px;
+  outline: none;
 }
 
 .date {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
 .form_container select {
-    width: 100%;
-    padding: 8px 16px;
-    border: none;
-    border-bottom: 2px solid gray;
-    margin: 0 auto 20px;
-    text-align-last: center;
-    font-weight: bold;
-    font-size: 1.6rem;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin: 0 auto 20px;
+  text-align-last: center;
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .form_container option {
-    text-align-last: center;
+  text-align-last: center;
 }
 
 .form_container button {
-    width: 80%;
-    margin-top: 40px;
+  width: 80%;
+  margin-top: 40px;
+}
+
+@media (max-width: 1150px) {
+  .form_container form {
+    max-width: 440px;
+    height: 425px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+  }
 }

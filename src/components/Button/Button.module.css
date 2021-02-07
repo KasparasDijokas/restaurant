@@ -1,29 +1,29 @@
 .btn_dark {
-    padding: 14px 40px;
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 1.8rem;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
+  padding: 14px 40px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.8rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .btn_light {
-    padding: 14px 40px;
-    background: black;
-    border: 1px solid black;
-    color: #fff;
-    transition: all .2s ease-in-out;
-    font-size: 1.8rem;
-    cursor: pointer;
+  padding: 14px 40px;
+  background: black;
+  border: 1px solid black;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .btn_dark:hover {
-    background: #fff;
-    color: black;
+  background: #fff;
+  color: black;
 }
 
 .btn_light:hover {
-    background: #fff;
-    color: black;
+  background: #fff;
+  color: black;
 }
